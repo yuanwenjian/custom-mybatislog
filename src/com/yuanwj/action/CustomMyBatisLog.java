@@ -120,7 +120,7 @@ public class CustomMyBatisLog extends AnAction {
             }
             if (StringUtils.isNotEmpty(preparingLine) && StringUtils.isNotEmpty(parametersLine) && isEnd) {
                 int indexNum = ConfigUtil.getIndexNum(project);
-                String preStr = "--" + indexNum + "restore sql from selection  - ==>";
+                String preStr = "--[ "+project.getName()+ " ] " + indexNum + "restore sql from selection  - ==>";
                 ConfigUtil.setIndexNum(project, ++indexNum);
 
                 PrintUtil.println(project, preStr, ConsoleViewContentType.USER_INPUT);

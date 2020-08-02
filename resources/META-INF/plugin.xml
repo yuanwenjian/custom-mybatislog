@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.yuanwj.plugin.intellij.assistant.mybaitslog</id>
-    <name>MybatisLog</name>
+    <name>Custom MyBatis Log</name>
     <vendor email="yuanwj0929@gmail.com" url="https://github.com/yuanwenjian/custom-mybatislog">yuanwj</vendor>
 
     <!-- 插件版本 -->
@@ -35,7 +35,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <consoleFilterProvider implementation="com.yuanwj.MyBatisLogProvider"/>
-        <toolWindow id="MyBatis Log" secondary="true" icon="/icons/mybatis.png" anchor="bottom"
+        <toolWindow id="Custom MyBatis Log" secondary="true" icon="/icons/mybatis.png" anchor="bottom"
                     factoryClass="com.yuanwj.MyBatisLogToolWindow"/>
     </extensions>
 
