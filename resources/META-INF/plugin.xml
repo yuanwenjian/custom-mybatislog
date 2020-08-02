@@ -1,0 +1,53 @@
+<idea-plugin>
+    <id>com.yuanwj.plugin.intellij.assistant.mybaitslog</id>
+    <name>MybatisLog</name>
+    <vendor email="yuanwj0929@gmail.com" url="https://github.com/Link-Kou/intellij-treeInfotip">yuanwj</vendor>
+
+    <!-- 插件版本 -->
+    <version>1.0.3</version>
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="172"/>
+    <!-- 插件的描述 -->
+    <description><![CDATA[
+      <ul>
+        <li>Copy with intellij-mybaitslog</li>
+        <h3>中文：</h3>
+        <li>拷贝 intellij-mybaitslog</li>
+      </ul>
+    ]]></description>
+
+    <!-- 插件的功能 -->
+    <change-notes><![CDATA[
+      <ul>
+        <p>1.0.0</p>
+        <li>之前intellij-mybaitslog 打印格式不满足个人需要,修改源码重新自定义输出格式 </li>
+      </ul>
+    ]]></change-notes>
+
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products-->
+
+    <!--必须为企业版-->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <consoleFilterProvider implementation="com.yuanwj.MyBatisLogProvider"/>
+        <toolWindow id="MyBatis Log" secondary="true" icon="/icons/mybatis.png" anchor="bottom"
+                    factoryClass="com.yuanwj.MyBatisLogToolWindow"/>
+    </extensions>
+
+    <actions>
+
+        <!-- restore sql from selection -->
+        <action class="com.yuanwj.action.CustomMyBatisLog" id="YuanwjSqlAction"
+                text="Restore Sql from Selection"
+                description="Restore Sql from Selection">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="before" relative-to-action="ConsoleView.ClearAll"/>
+        </action>
+
+    </actions>
+</idea-plugin>
