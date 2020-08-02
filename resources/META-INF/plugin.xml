@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.yuanwj.plugin.intellij.assistant.mybaitslog</id>
     <name>MybatisLog</name>
-    <vendor email="yuanwj0929@gmail.com" url="https://github.com/Link-Kou/intellij-treeInfotip">yuanwj</vendor>
+    <vendor email="yuanwj0929@gmail.com" url="https://github.com/yuanwenjian/custom-mybatislog">yuanwj</vendor>
 
     <!-- 插件版本 -->
     <version>1.0.3</version>
