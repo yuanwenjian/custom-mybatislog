@@ -10,6 +10,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.SimpleToolWindowPanel;
+import com.yuanwj.action.gui.FilterSetting;
 import com.yuanwj.util.PrintUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -77,14 +78,14 @@ public class ConsolePanel {
     @NotNull
     private ActionToolbar createActionToolbar(final Project project, JComponent consolePanel, ConsoleView consoleView) {
         final DefaultActionGroup actionGroup = new DefaultActionGroup();
-//        ConsoleActionGroup.withFilter(() -> {
-//            //启动filter配置
-//            Filter dialog = new FilterSetting(project);
-//            dialog.pack();
-//            dialog.setSize(600, 400);//配置大小
-//            dialog.setLocationRelativeTo(null);//位置居中显示
-//            dialog.setVisible(true);
-//        });
+        ConsoleActionGroup.withFilter(() -> {
+            //启动filter配置
+            FilterSetting dialog = new FilterSetting(project);
+            dialog.pack();
+            dialog.setSize(600, 400);//配置大小
+            dialog.setLocationRelativeTo(null);//位置居中显示
+            dialog.setVisible(true);
+        });
         actionGroup.add(new ConsoleActionGroup.FilterAction());
         actionGroup.add(consoleView.createConsoleActions()[2]);
         actionGroup.add(consoleView.createConsoleActions()[3]);

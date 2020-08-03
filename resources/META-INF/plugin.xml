@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.yuanwj.plugin.intellij.assistant.mybaitslog</id>
     <name>Custom MyBatis Log</name>
-    <vendor email="yuanwj0929@gmail.com" url="https://github.com/yuanwenjian/custom-mybatislog">yuanwj</vendor>
+    <vendor email="yuanwj0929@gmail.com" url="">yuanwj</vendor>
 
     <!-- 插件版本 -->
     <version>1.0.3</version>
@@ -25,9 +25,6 @@
     ]]></change-notes>
 
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!-- uncomment to enable plugin in all products-->
 
     <!--必须为企业版-->
     <depends>com.intellij.modules.lang</depends>
@@ -35,7 +32,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <consoleFilterProvider implementation="com.yuanwj.MyBatisLogProvider"/>
-        <toolWindow id="Custom MyBatis Log" secondary="true" icon="/icons/mybatis.png" anchor="bottom"
+        <toolWindow id="MyBatis Log" secondary="true" icon="/icons/mybatis.png" anchor="bottom"
                     factoryClass="com.yuanwj.MyBatisLogToolWindow"/>
     </extensions>
 
@@ -45,6 +42,7 @@
         <action class="com.yuanwj.action.CustomMyBatisLog" id="YuanwjSqlAction"
                 text="Restore Sql from Selection"
                 description="Restore Sql from Selection">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
             <add-to-group group-id="ToolsMenu" anchor="last"/>
             <add-to-group group-id="ConsoleEditorPopupMenu" anchor="before" relative-to-action="ConsoleView.ClearAll"/>
         </action>

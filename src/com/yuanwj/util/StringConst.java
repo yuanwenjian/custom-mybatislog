@@ -16,5 +16,6 @@ public class StringConst {
     public static final String RUNNINGKEY = PLUGIN_ID + "running";
     public static final String SQLFORMATKEY = PLUGIN_ID + "sqlFormat";
     public static final String INDEXNUMKEY = PLUGIN_ID + "indexNum";
+    public static final String WINDOWNAME = "MyBatis Log";
 
 }

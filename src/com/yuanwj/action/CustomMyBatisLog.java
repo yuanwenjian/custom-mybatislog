@@ -42,7 +42,7 @@ public class CustomMyBatisLog extends AnAction {
         CaretModel caretModel = e.getData(LangDataKeys.EDITOR).getCaretModel();
         Caret currentCaret = caretModel.getCurrentCaret();
         String sqlText = currentCaret.getSelectedText();
-        ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("MyBatis Log");
+        ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow(StringConst.WINDOWNAME);
         toolWindow.show(null);
         //激活Restore Sql tab
         toolWindow.activate(null);
